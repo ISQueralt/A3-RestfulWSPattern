@@ -17,6 +17,7 @@ public class Time {
     /**
      * This is a sample web service operation
      */
+    
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
@@ -26,6 +27,7 @@ public class Time {
      * Web service operation
      * @return Actual Time
      */
+    
     @WebMethod(operationName = "getActualTime")
     public String getActualTime() {
         Calendar calendario = new GregorianCalendar();
