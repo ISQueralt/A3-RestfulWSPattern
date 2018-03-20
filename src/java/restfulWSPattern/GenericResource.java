@@ -5,6 +5,8 @@
  */
 package restfulWSPattern;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -29,6 +31,15 @@ public class GenericResource {
      * Creates a new instance of GenericResource
      */
     public GenericResource() {
+    }
+    
+    @GET
+    public String getActualTime() {
+        Calendar calendario = new GregorianCalendar();
+        int hora = calendario.get(Calendar.HOUR_OF_DAY);
+        int minutos = calendario.get(Calendar.MINUTE);
+        int segundos = calendario.get(Calendar.SECOND);
+        return hora + ":" + minutos + ":" + segundos;
     }
 
     /**
