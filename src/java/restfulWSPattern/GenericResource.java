@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author Queralt
  */
-@Path("generic")
+@Path("Get actual time")
 public class GenericResource {
 
     @Context
@@ -33,14 +33,6 @@ public class GenericResource {
     public GenericResource() {
     }
     
-    @GET
-    public String getActualTime() {
-        Calendar calendario = new GregorianCalendar();
-        int hora = calendario.get(Calendar.HOUR_OF_DAY);
-        int minutos = calendario.get(Calendar.MINUTE);
-        int segundos = calendario.get(Calendar.SECOND);
-        return hora + ":" + minutos + ":" + segundos;
-    }
 
     /**
      * Retrieves representation of an instance of restfulWSPattern.GenericResource
@@ -49,8 +41,11 @@ public class GenericResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getJson() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
+        Calendar calendario = new GregorianCalendar();
+        int hora = calendario.get(Calendar.HOUR_OF_DAY);
+        int minutos = calendario.get(Calendar.MINUTE);
+        int segundos = calendario.get(Calendar.SECOND);
+        return hora + ":" + minutos + ":" + segundos;
     }
 
     /**
